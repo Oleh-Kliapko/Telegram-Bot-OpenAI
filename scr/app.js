@@ -7,7 +7,10 @@ const { bot, INITIAL_SESSION } = require("./models");
 
 // the bot processes voice requests
 bot.on(message("voice"), async (context) => {
-  context.session ??= INITIAL_SESSION; // if session is null or undefined set up initial variable
+  // if session is null or undefined set up initial variable
+  if (!context.session) {
+    context.session = INITIAL_SESSION;
+  }
 
   try {
     await context.reply(code("Request accepted. Wait for a reply..."));
@@ -40,7 +43,10 @@ bot.on(message("voice"), async (context) => {
 
 // the bot processes text requests
 bot.on(message("text"), async (context) => {
-  context.session ??= INITIAL_SESSION;
+  if (!context.session) {
+    context.session = INITIAL_SESSION;
+  }
+
   const { text } = context.message;
 
   try {

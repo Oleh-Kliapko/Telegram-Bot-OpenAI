@@ -4,8 +4,8 @@
   "description": "Communicate with your own chat in Telegram and get",
   "type": "commonjs",
   "scripts": {
-    "dev": "nodemon ./scr/app.js",
-    "start": "node ./scr/app.js"
+    "dev": "cross-env NODE_ENV=development nodemon ./scr/app.js",
+    "start": "cross-env NODE_ENV=production node ./scr/app.js"
   },
   "keywords": [],
   "author": "Oleh_Kliapko <goldclub1977@gmail.com>",
