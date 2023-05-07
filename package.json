@@ -1,7 +1,7 @@
 {
   "name": "telegramgpt_bot",
   "version": "1.0.0",
-  "description": "Communicate with your own chat in Telegram and get",
+  "description": "Communicate with your own chat-bot in Telegram in a voice or text",
   "type": "commonjs",
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon ./scr/app.js",
