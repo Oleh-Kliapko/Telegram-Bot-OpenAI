@@ -2,6 +2,7 @@ const { message } = require("telegraf/filters");
 const { code } = require("telegraf/format");
 
 const { oggToMp3, streamToText } = require("./convertVoice");
+const { removeStreams } = require("./helpers");
 const { bot, INITIAL_SESSION } = require("./models");
 
 // the bot processes voice requests
@@ -30,6 +31,8 @@ bot.on(message("voice"), async (context) => {
     messages.push({ role: streamToText.roles.ASSISTANT, content }); // add new message to current session
 
     await context.reply(content); // show an answer for user
+
+    removeStreams(mp3Path); //delete .mp3 file
   } catch (error) {
     console.log("Other error", error.message);
   }
