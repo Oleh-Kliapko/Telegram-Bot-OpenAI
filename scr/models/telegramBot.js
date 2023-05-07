@@ -7,9 +7,9 @@ const INITIAL_SESSION = {
 
 const bot = new Telegraf(process.env.TELEGRAM_TOKEN);
 
-bot.use(session()); // set sessions in our bot to be able to ask many questions within one request
-
 bot.launch(); // launch our bot
+
+bot.use(session()); // set sessions in our bot to be able to ask many questions within one request
 
 // launch when new user connected  - writes '/start'
 bot.command("start", async (context) => {
