@@ -1,5 +1,9 @@
 # TelegramGPT_Bot
 
-Communicate with your own chat in Telegram and get speed answers for your requests (in a voice or text)
+Communicate with your own chat in Telegram (in a voice or text) and get fast answers from ChatGPT.
 
-OpenAPI key will be expired to Jun 1 2023
+## Join:
+
+[GPT-chatbot](https://t.me/Conversation_GPT_Bot/)
+/start - to begin
+/new - to new session of conversation
