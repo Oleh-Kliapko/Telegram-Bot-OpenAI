@@ -15,7 +15,7 @@ bot.use(session()); // set sessions in our bot to be able to ask many questions 
 bot.command("start", async (context) => {
   context.session = INITIAL_SESSION;
   await context.reply(
-    "Hello. Ask me something in a voice and I will answer you immediately because I use AI ChatGPT :)"
+    "Hello. Ask me something in a voice or text and I will answer you immediately because I use AI ChatGPT :)"
   );
 });
 

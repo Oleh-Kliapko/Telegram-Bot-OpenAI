@@ -30,10 +30,10 @@ bot.on(message("voice"), async (context) => {
 
     const { messages } = context.session;
     messages.push({ role: streamToText.roles.USER, content: text }); // add new message to current session
-    const { content } = await streamToText.chat(messages); // send text to chatGPT with certain role
-    messages.push({ role: streamToText.roles.ASSISTANT, content }); // add new message to current session
+    const res = await streamToText.chat(messages); // send text to chatGPT with certain role
+    messages.push({ role: streamToText.roles.ASSISTANT, content: res.content }); // add new message to current session
 
-    await context.reply(content); // show an answer for user
+    await context.reply(res.content); // show an answer for user
 
     removeStreams(mp3Path); //delete .mp3 file
   } catch (error) {
